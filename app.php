@@ -12,6 +12,6 @@
 
     <canvas></canvas>
 
-    <script src="./public/js/app.js"></script>
+    <script type="module" src="./public/js/app.js"></script>
 </body>
 </html>
