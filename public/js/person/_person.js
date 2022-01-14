@@ -26,7 +26,7 @@ const Person = function($plan){
             this.time = setInterval(()=>{
                 if(this.y >= $value && this.processing == true){
                     this.plan.clearRect(this.x, this.y, this.width, this.height);
-                    this.y = this.y - 10
+                    this.y = this.y - 20
                     this.x = this.x + 4
                     this.draw()
                 }else{
@@ -37,7 +37,7 @@ const Person = function($plan){
                         clearInterval(this.time)
                     }else{
                         this.plan.clearRect(this.x, this.y, this.width, this.height);
-                        this.y = this.y + 10; 
+                        this.y = this.y + 20; 
                         this.x = this.x + 4
                         this.draw()
                     }

@@ -41,7 +41,7 @@ const Controll = function($plan, $key){
     }
 
     this.jump = (bg_x)=>{
-        return ( Math.floor(Math.random() * (400 - 200 + 1)) + 200);
+        return ( Math.floor(Math.random() * (500 - 400 + 1)) + 400);
     }
 
 }

@@ -6,14 +6,30 @@ const Reaper = function(plan){
     this.height = 100;
     this.y = (window.innerHeight / 10 ) * 7.5;
     this.x = (window.innerWidth / 10 ) * 8.5;
+    this.speed = Math.floor(Math.random() * (12 - 5 + 1)) + 5;
     this.plan = plan;
+    this.time;
+    this.status;
+
+    this.move = ()=> {
+        this.time = setInterval( ()=>{
+            if( this.x <= -(window.innerWidth/10)*2){
+                clearInterval(this.time)
+                this.status = true;
+            } else{
+                this.plan.clearRect(this.x, this.y, this.width, this.height);
+                this.x = this.x - this.speed;  
+                this.plan.drawImage(this.img, this.x, this.y, this.width, this.height);
+                }            
+             
+        }, 20 )   
+    }
+
 
     this.draw = () =>{
-        this.img.onload = ()=>{
-            this.plan.drawImage(this.img, this.x, this.y, this.width, this.height);
-        }
-        this.plan.drawImage(this.img, this.x, this.y, this.width, this.height);
-
+        
+        this.move() 
+        return this.status;
     }
     
 }

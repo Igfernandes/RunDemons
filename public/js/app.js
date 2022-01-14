@@ -78,4 +78,22 @@ document.body.onkeydown = function(ev){
    
 }
 
+/** 
+ * Menu Actions
+ **/
 
+const Menu = {
+    loop: "" ,
+    start: function(){
+        this.loop = setInterval(()=>{
+            /**
+            * @create Start
+            */
+            Game.enemy.reaper = [new Reaper(Game.context)]
+           console.log(Game.enemy.reaper[0].draw()) 
+        },900)   
+        
+    }
+}
+
+Menu.start();
